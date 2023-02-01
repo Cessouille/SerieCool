@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerieCool", "SerieCool\SerieCool.csproj", "{800D9AC8-A111-4808-896E-F44DC4895283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerieCool", "SerieCool\SerieCool.csproj", "{800D9AC8-A111-4808-896E-F44DC4895283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerieCoolTests", "SerieCoolTests\SerieCoolTests.csproj", "{00133910-73BC-41DB-81E1-7860E8C22110}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{800D9AC8-A111-4808-896E-F44DC4895283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800D9AC8-A111-4808-896E-F44DC4895283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{800D9AC8-A111-4808-896E-F44DC4895283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00133910-73BC-41DB-81E1-7860E8C22110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00133910-73BC-41DB-81E1-7860E8C22110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00133910-73BC-41DB-81E1-7860E8C22110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00133910-73BC-41DB-81E1-7860E8C22110}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

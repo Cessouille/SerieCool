@@ -20,13 +20,22 @@ namespace SerieCool.Controllers
             _context = context;
         }
 
+        /// <summary> Get all series. </summary>
+        /// <returns> List of series </returns>
+        /// <response code="200"> When all the series are found </response>
         // GET: api/Series
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Serie>>> GetSeries()
         {
             return await _context.Series.ToListAsync();
         }
 
+        /// <summary> Get a single serie. </summary>
+        /// <returns> Http response </returns>
+        /// <param name="id"> The id of the serie </param>
+        /// <response code="200"> When the serie id is found </response>
+        /// <response code="404"> When the serie id is not found </response>
         // GET: api/Series/5
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Serie))]
@@ -43,6 +52,13 @@ namespace SerieCool.Controllers
             return serie;
         }
 
+        /// <summary> Modify a serie. </summary>
+        /// <returns> Http response </returns>
+        /// <param name="id"> The id of the serie </param>
+        /// <param name="devise"> The serie with modification </param>
+        /// <response code="200"> When the serie id is found </response>
+        /// <response code="400"> When the serie has a wrong variable or id and devise.Id doesn't match </response>
+        /// <response code="404"> When the serie id is not found </response>
         // PUT: api/Series/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -77,10 +93,16 @@ namespace SerieCool.Controllers
             return NoContent();
         }
 
+        /// <summary> Create a new serie. </summary>
+        /// <returns> Http response </returns>
+        /// <param name="devise"> The new serie </param>
+        /// <response code="201"> When the serie is created </response>
+        /// <response code="400"> When the serie has a wrong variable </response>
         // POST: api/Series
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Serie>> PostSerie(Serie serie)
         {
             _context.Series.Add(serie);
@@ -89,6 +111,11 @@ namespace SerieCool.Controllers
             return CreatedAtAction("GetSerie", new { id = serie.Serieid }, serie);
         }
 
+        /// <summary> Delete a serie. </summary>
+        /// <returns> Http response </returns>
+        /// <param name="id"> The id of the serie </param>
+        /// <response code="200"> When the serie id is found </response>
+        /// <response code="404"> When the serie id is not found </response>
         // DELETE: api/Series/5
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
