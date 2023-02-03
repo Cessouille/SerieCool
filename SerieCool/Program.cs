@@ -11,8 +11,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 
+/*builder.Services.AddDbContext<SeriesDbContext>(options =>
+  options.UseNpgsql(builder.Configuration.GetConnectionString("SeriesDbContext")));*/
 builder.Services.AddDbContext<SeriesDbContext>(options =>
-  options.UseNpgsql(builder.Configuration.GetConnectionString("SeriesDbContext")));
+  options.UseNpgsql(builder.Configuration.GetConnectionString("SeriesDbContextRemote")));
 
 var app = builder.Build();
 
