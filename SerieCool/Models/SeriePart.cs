@@ -1,4 +1,6 @@
-﻿namespace SerieCool.Models.EntityFramework;
+﻿using System.Text.Json.Serialization;
+
+namespace SerieCool.Models.EntityFramework;
 
 public partial class Serie
 {
@@ -13,6 +15,7 @@ public partial class Serie
         Network = network;
     }
 
+    [JsonConstructor]
     public Serie(string titre, string? resume, int? nbsaisons, int? nbepisodes, int? anneecreation, string? network)
     {
         Titre = titre;
